@@ -1,0 +1,38 @@
+module.exports = function(app) {
+    app.get('/montadora', function(req, res) {
+        res.render('montadora');
+    });
+
+    app.post('/montadora/salva', function(req, res) {
+		var montadora = req.body;
+		var connection = app.controllers.connectionFactory();
+		var montadoraSave = new app.controllers.montadora(connection);		
+
+		montadoraSave.salva(montadora, function(err, result) {
+			res.redirect('/montadora');
+			console.log(err + 'montadora Salvo!');
+		});
+
+		connection.end();
+	});
+	
+	app.get('/montadoras', function(req, res) {
+		var connection = app.controllers.connectionFactory();
+        var montadoraList = new app.controllers.montadora(connection);
+		
+		montadoraList.lista(connection, function(err, resposta) {
+			// res.render('estados/lista', {list : resposta});
+			res.format( {
+				html: function() {
+					res.render('montadoras', {mont: resposta});
+				},
+				json: function() {
+					res.json(resposta);
+				}
+			});
+		});
+
+		connection.end();
+
+	});
+}

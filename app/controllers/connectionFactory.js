@@ -8,7 +8,7 @@ function createDBConnection() {
             host: 'localhost',
             user: 'root',
             password: 'Q1w2e3!@#',
-            database: 'cursoNode1'
+            database: 'automotivo'
         }
     );
 };
@@ -17,4 +17,3 @@ function createDBConnection() {
 module.exports = function() {
 	return createDBConnection;
 };
-

@@ -1,0 +1,41 @@
+#InputNome {
+    /*background-color: lightblue;
+    -webkit-text-fill-color: red;*/
+    width: 70ch;
+}
+#InputEmail {
+    width: 70ch;
+}
+#InputCPF {
+    width: 30ch;
+}
+#InputRG {
+    width: 32ch;
+}
+#InputDia {
+    width: 10ch;
+}
+#InputMes {
+    width: 10ch;
+}
+#InputAno {
+    width: 10ch;
+}
+#InputRua{
+    width: 50ch;
+}
+#InputBairro {
+    width: 39ch;
+}
+#InputNro {
+    width: 8ch;
+}
+#InputCEP {
+    width: 12ch;
+}
+#InputCidade {
+    width: 30ch;
+}
+#selectEstado {
+    width: 25ch;
+}
