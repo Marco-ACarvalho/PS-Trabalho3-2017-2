@@ -1,0 +1,24 @@
+{
+  "name": "sbrebol_automotivo",
+  "description": "Projeto da materia de Programação em Scripts",
+  "main": "server.js",
+  "authors": [
+    "MarcoAC - marco.acarvalho76@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "angular-resource": "^1.6.6",
+    "jquery": "^3.2.1",
+    "bootstrap": "^4.0.0-beta.2"
+  }
+}

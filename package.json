@@ -1,21 +1,21 @@
 {
-  "name": "curso-nodejs-01.local",
+  "name": "sbrebol_automotivo",
   "version": "1.0.0",
-  "description": "Aplicação que lista times de Futebol do Brasil.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Futebol"
-  ],
-  "author": "Getulio Vinicius <getuliovinits@gmail.com>",
-  "license": "GPL-3.0",
+  "description": "Projeto da materia de Programação em Scripts",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
-    "express": "^4.15.4",
+    "express": "^4.16.2",
     "express-load": "^1.1.16",
-    "mysql": "^2.14.1"
-  }
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "MarcoAC - marco.acarvalho76@gmail.com",
+  "license": "ISC"
 }
