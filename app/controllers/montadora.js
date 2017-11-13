@@ -1,5 +1,3 @@
-
-
 function automovel(connection) {
 	this._connection = connection;
 };

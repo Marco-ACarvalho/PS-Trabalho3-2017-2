@@ -43,7 +43,6 @@ module.exports = function (app) {
 		});
 
 		automovelList.lista(connection, function (err, resposta) {
-			// res.render('estados/lista', {list : resposta});
 			res.format({
 				html: function () {
 					res.render('automoveis', {

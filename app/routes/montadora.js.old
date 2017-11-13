@@ -21,7 +21,6 @@ module.exports = function(app) {
         var montadoraList = new app.controllers.montadora(connection);
 		
 		montadoraList.lista(connection, function(err, resposta) {
-			// res.render('estados/lista', {list : resposta});
 			res.format( {
 				html: function() {
 					res.render('montadoras', {mont: resposta});

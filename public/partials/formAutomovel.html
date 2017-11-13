@@ -1,0 +1,151 @@
+<!-- Inicio do Menu superior -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="">Nome da Empresa</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+	    aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/#!/home">Home</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="/#!/cadastro/automovel">Cadastro</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/#!/automoveis">Relatorios</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">Processamentos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/#!/ajuda">Ajuda</a>
+			</li>
+		</ul>
+		<form class="form-inline mt-2 mt-md-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</div>
+</nav>
+<!-- Fim do Menu Superior -->
+
+<!-- Corpo da Pagina -->
+<div class="container-fluid">
+	<div class="row">
+		<!-- Inicio do menu lateral -->
+		<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+			<ul class="nav nav-pills flex-column">
+				<li class="nav-item">
+					<a class="nav-link active" href="/#!/cadastro/automovel">Automovel
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/#!/cadastro/montadora">Montadora</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Fim do menu lateral -->
+		<!-- Inicio do formulario -->
+		<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+			<form class="form-horizontal" id="cadastro_automovel" action="/automovel/salva" method="post">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Cadastro de Automovel</legend>
+
+					<div class="form-group">
+						<div class="col-md-10">
+							<div class="row">
+								<!-- Marca do Automovel-->
+								<div class="form-group col-md-5">
+									<label class="control-label" for="Marca">Marca</label>
+									<div>
+										<!-- class="col-md-8"> -->
+										<input id="Marca" name="Marca" type="text" placeholder="Marca" class="form-control input-md">
+									</div>
+								</div>
+								<!-- Modelo do Automovel -->
+								<div class="form-group col-md-5">
+									<label class="control-label" for="Modelo">Modelo</label>
+									<div>
+										<input id="Modelo" name="Modelo" type="text" placeholder="Modelo" class="form-control input-md">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-8">
+							<div class="row">
+								<!-- Categoria do Automovel -->
+								<div class="form-group col-md-4">
+									<label class="control-label" for="Categoria">Categoria</label>
+									<div>
+										<select id="Categoria" name="Categoria" class="form-control">
+											<option value="HATCH">HATCH</option>
+											<option value="SEDANS">SEDANS</option>
+											<option value="SUV">SUV</option>
+											<option value="SW">SW</option>
+											<option value="GRANDCAB">GRANDCAB</option>
+											<option value="SPORTS">SPORTS</option>
+											<option value="PICK-UPS">PICK-UPS</option>
+										</select>
+									</div>
+								</div>
+								<!-- Combustivel do Automovel -->
+								<div class="form-group col-md-4">
+									<label class="control-label" for="Combustivel">Combustivel</label>
+									<div>
+										<select id="Combustivel" name="Combustivel" class="form-control">
+											<option value="GASOLINA">Gasolina</option>
+											<option value="ALCOOL">Álcool</option>
+											<option value="DIESEL">Diesel</option>
+										</select>
+									</div>
+								</div>
+								<!-- Modelo do Automovel -->
+								<div class="form-group col-md-4 ">
+									<label class="control-label" for="Placa">Placa</label>
+									<div>
+										<input id="Placa" name="Placa" type="text" placeholder="Placa" class="form-control input-md">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-10">
+							<div class="row">
+								<!-- Marca do Automovel-->
+								<div class="form-group col-md-3">
+									<label class="control-label" for="Montadora">Montadora</label>
+									<div>
+										<!-- class="col-md-8"> -->
+										<input id="Montadora" name="Montadora" type="text" placeholder="Montadora" class="form-control input-md" oninput="displayResult(<%= mont %>)">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group" id="Botoes">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-3">
+									<input class="btn btn-success" type="submit" value="Salvar" />
+									<!-- <a class="btn btn-success" href="/">Salvar</a> -->
+								</div>
+								<div class="col-md-3">
+									<a class="btn btn-danger" href="/automovel">Limpar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</main>
+		<!-- Fim do formulario -->
+	</div>
+</div>

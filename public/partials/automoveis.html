@@ -8,19 +8,19 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/home">Home</a>
+                <a class="nav-link" href="/#!/home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/automovel">Cadastro</a>
+                <a class="nav-link" href="/#!/cadastro/automovel">Cadastro</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/automoveis">Relatorios</a>
+                <a class="nav-link" href="/#!/automoveis">Relatorios</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Processamentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Utilitarios</a>
+                <a class="nav-link" href="/#!/ajuda">Ajuda</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -37,12 +37,12 @@
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/automoveis">Automoveis
+                    <a class="nav-link active" href="/#!/automoveis">Automoveis
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/montadoras">Montadoras</a>
+                    <a class="nav-link" href="/#!/montadoras">Montadoras</a>
                 </li>
             </ul>
         </nav>
@@ -63,7 +63,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- -->
+                        <!-- Repetição de todas as montadoras -->
+						<tr ng-repeat="automovel in automoveis">
+							<td>
+								<a>{{automovel._id}}</a>
+							</td>
+							<td>{{automovel.Marca}}</td>
+                            <td>{{automovel.Modelo}}</td>
+                            <td>{{automovel.Categoria}}</td>
+                            <td>{{automovel.Combustivel}}</td>
+                            <td>{{automovel.Placa}}</td>
+                            <td>{{automovel.Montadora}}</td>
+						</tr>
+						<!-- -->
+                        <!-- - ->
                         <% for(var i = 0; i < list.length; i++) { %>
                             <% var aux = parseInt(list[i].Montadora); %>
                             <tr>
@@ -76,7 +89,7 @@
                                 <td><%= mont[aux-1].Montadora %></td>
                             </tr>
                         <% } %>
-                        <!-- -->
+                        <!- - -->
                     </tbody>
                 </table>
             </div>
