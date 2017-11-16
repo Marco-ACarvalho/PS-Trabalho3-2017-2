@@ -16,9 +16,9 @@ module.exports = function() {
 	app.use(bodyParser.json());
 	//app.use(require('method-override')());
 
-	load('routes', {cwd : 'app'})
+	load('models', {cwd : 'app'})
 		.then('controllers')
-		.then('style')
+		.then('routes')
 		.into(app);
 
 	app.get('*',function(req, res) {

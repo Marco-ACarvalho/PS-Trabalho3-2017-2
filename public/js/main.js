@@ -1,4 +1,4 @@
-angular.module('contatooh', ['ngRoute' /*, 'ngResource'*/ ])
+angular.module('contatooh', ['ngRoute', 'ngResource'])
 	.config(function ($routeProvider /*, $httpProvider */ ) {
 
 		//$httpProvider.interceptors.push('meuInterceptor');
@@ -16,8 +16,17 @@ angular.module('contatooh', ['ngRoute' /*, 'ngResource'*/ ])
 			templateUrl: 'partials/automoveis.html',
 			controller: 'AutomoveisController'
 		});
+		$routeProvider.when('automovel:automovelId', {
+			templateUrl: 'partials/automovel.html',
+			controller: 'AutomovelController'
+		});
 		$routeProvider.when('/montadoras', {
-			templateUrl: 'partials/montadoras.html'
+			templateUrl: 'partials/montadoras.html',
+			controller: 'MontadorasController'
+		});
+		$routeProvider.when('montadora:montadoraId', {
+			templateUrl: 'partials/montadora.html',
+			controller: 'MontadoraController'
 		});
 		$routeProvider.when('/ajuda', {
 			templateUrl: 'partials/ajuda.html'

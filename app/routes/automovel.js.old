@@ -1,0 +1,49 @@
+module.exports = function (app) {
+
+	app.post('/automovel/salva', function (req, res) {
+		var automovel = req.body;
+		var connection = app.controllers.connectionFactory();
+		var automovelSave = new app.controllers.automovel(connection);
+
+		automovelSave.salva(automovel, function (err, result) {
+			res.redirect('/automovel');
+			console.log(err + 'Automovel Salvo!');
+		});
+
+		connection.end();
+	});
+
+	app.get('/automovel', function (req, res) {
+		var connection = app.controllers.connectionFactory();
+		var automovelList = new app.controllers.automovel(connection);
+
+		automovelList.lista(connection, function (err, resposta) {
+			console.log(resposta);
+			res.format({
+				html: function () {
+					res.render('automoveis', {list: resposta});
+					console.log('HTML ' + resposta);
+				},
+				json: function () {
+					res.json(resposta);
+					console.log('JSON ' + resposta);
+				}
+			});
+		});
+
+		connection.end();
+
+	});
+}
+/*
+<% for(var i = 0; i < list.length; i++) { %>
+								<tr>
+									<td><%= list[i].id %></td>
+									<td><%= list[i].Marca %></td>
+									<td><%= list[i].Modelo %></td>
+									<td><%= list[i].Categoria %></td>
+									<td><%= list[i].Combustivel %></td>
+									<td><%= list[i].Placa %></td>
+								</tr>
+							<% } %>
+*/

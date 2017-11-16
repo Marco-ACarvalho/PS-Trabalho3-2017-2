@@ -17,15 +17,14 @@
                 <a class="nav-link" href="/#!/automoveis">Relatorios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Processamentos</a>
+                <a class="nav-link" href="/#!/editar">Editar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/#!/ajuda">Ajuda</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" ng-model="filtro" type="search" placeholder="Procure um Automovel" aria-label="Search">
         </form>
     </div>
 </nav>
@@ -64,7 +63,7 @@
                     </thead>
                     <tbody>
                         <!-- Repetição de todas as montadoras -->
-						<tr ng-repeat="automovel in automoveis">
+						<tr ng-repeat="automovel in automoveis | filter: filtro">
 							<td>
 								<a>{{automovel._id}}</a>
 							</td>
@@ -76,20 +75,6 @@
                             <td>{{automovel.Montadora}}</td>
 						</tr>
 						<!-- -->
-                        <!-- - ->
-                        <% for(var i = 0; i < list.length; i++) { %>
-                            <% var aux = parseInt(list[i].Montadora); %>
-                            <tr>
-                                <td><%= list[i].id %></td>
-                                <td><%= list[i].Marca %></td>
-                                <td><%= list[i].Modelo %></td>
-                                <td><%= list[i].Categoria %></td>
-                                <td><%= list[i].Combustivel %></td>
-                                <td><%= list[i].Placa %></td>
-                                <td><%= mont[aux-1].Montadora %></td>
-                            </tr>
-                        <% } %>
-                        <!- - -->
                     </tbody>
                 </table>
             </div>

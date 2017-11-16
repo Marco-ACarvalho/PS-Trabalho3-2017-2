@@ -80,23 +80,11 @@
 								<th>Categoria</th>
 								<th>Combustivel</th>
 								<th>Placa</th>
-								<th>Montadora</th>
 							</tr>
 						</thead>
 						<tbody>
 							<!-- -->
-							<% for(var i = 0; i < list.length; i++) { %>
-								<% var aux = parseInt(list[i].Montadora); %>
-								<tr>
-									<td><%= list[i].id %></td>
-									<td><%= list[i].Marca %></td>
-									<td><%= list[i].Modelo %></td>
-									<td><%= list[i].Categoria %></td>
-									<td><%= list[i].Combustivel %></td>
-									<td><%= list[i].Placa %></td>
-									<td><%= mont[aux-1].Montadora %></td>
-								</tr>
-							<% } %>
+							
 							<!-- -->
 						</tbody>
 					</table>
